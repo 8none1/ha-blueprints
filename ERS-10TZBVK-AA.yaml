@@ -112,7 +112,7 @@ trigger_variables:
 
 trigger:
   - platform: mqtt
-    topic: "{{ base_topic  ~ '/' ~ mqtt_entity ~ '/action' }}"
+    topic: "{{ base_topic  ~ '/' ~ mqtt_entity }}"
   - platform: state
     entity_id: !input "state_entity"
 
@@ -135,7 +135,8 @@ trigger:
 action:
   - variables:
       platform: "{{ trigger.platform }}"
-      payload:  "{% if trigger.to_state|default(false,true) %}{{ trigger.to_state.state }}{% else %}{{ trigger.payload }}{% endif %}"
+      payload:  "{% if trigger.to_state|default(false,true) %}{{ trigger.to_state.state }}{% else %}{{ trigger.payload.action }}{% endif %}"
+      step_size: "{{ trigger.payload.action_step_size }}"
   - choose:
       - conditions:
           - "{{ platform == 'mqtt' and payload == 'single' }}"
