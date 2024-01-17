@@ -10,7 +10,14 @@ blueprint:
       description: The base topic as defined in the zigbee2mqtt config
       default: zigbee2mqtt
       name: Base Topic
-
+    state_entity:
+      name: State
+      selector:
+        entity:
+          domain: select
+          integration: mqtt
+          multiple: false
+    
     event_single:
       name: Event | Single Press
       description: Action to run on single press in event mode
@@ -96,7 +103,7 @@ blueprint:
       selector:
         action: {}
 
-mode: queued
+mode: single
 max_exceeded: silent
 
 trigger_variables:
@@ -106,11 +113,15 @@ trigger_variables:
 trigger:
   - platform: mqtt
     topic: "{{ base_topic  ~ '/' ~ mqtt_entity }}"
+  - platform: state
+    entity_id: !input "state_entity"
 
 condition:
   - condition: template
     value_template: >-
-      {{ trigger.payload_json.action != null and trigger.payload_json.action !="" }}
+      {% if trigger.platform == "mqtt" %} 
+        {{ trigger.payload_json.action != null and trigger.payload_json.action !="" }}
+      {% endif %}
 
 ###### https://manuals.plus/earda-technologies/ers-10tzbvk-aa-smart-knob-manual
 ### Event
