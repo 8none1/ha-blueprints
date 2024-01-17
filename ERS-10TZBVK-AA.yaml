@@ -1,6 +1,6 @@
 blueprint:
-  name: Zigbee2MQTT - ERS-10TZBVK-AA WILL
-  description: Zigbee Smart knob Will version
+  name: Tuya Smart Knob Z2M
+  description: Zigbee2MQTT Smart Knob with support for step size.  The faster you turn the knob the bigger the steps.
   domain: automation
   input:
     mqtt_entity:
@@ -10,13 +10,6 @@ blueprint:
       description: The base topic as defined in the zigbee2mqtt config
       default: zigbee2mqtt
       name: Base Topic
-    # state_entity:
-    #   name: State
-    #   selector:
-    #     entity:
-    #       domain: select
-    #       integration: mqtt
-    #       multiple: false
 
     event_single:
       name: Event | Single Press
@@ -113,8 +106,6 @@ trigger_variables:
 trigger:
   - platform: mqtt
     topic: "{{ base_topic  ~ '/' ~ mqtt_entity }}"
-  # - platform: state
-  #   entity_id: !input "state_entity"
 
 condition:
   - condition: template
