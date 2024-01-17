@@ -1,6 +1,6 @@
 blueprint:
-  name: Zigbee2MQTT - ERS-10TZBVK-AA
-  description: Zigbee Smart knob
+  name: Zigbee2MQTT - ERS-10TZBVK-AA WILL
+  description: Zigbee Smart knob Will version
   domain: automation
   input:
     mqtt_entity:
