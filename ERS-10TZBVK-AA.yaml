@@ -117,9 +117,7 @@ trigger:
   #   entity_id: !input "state_entity"
 
 condition: template
-value_template: >-
-  {{ trigger.payload_json.action != null and trigger.payload_json.action != ""
-  }}
+value_template: '{{ trigger.payload_json.action != null and trigger.payload_json.action != ""}}'
 
 ###### https://manuals.plus/earda-technologies/ers-10tzbvk-aa-smart-knob-manual
 ### Event
