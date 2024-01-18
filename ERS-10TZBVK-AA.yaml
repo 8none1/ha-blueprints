@@ -119,10 +119,12 @@ trigger:
 
 condition:
   - condition: template
-    value_template: >-
-      {% if trigger.platform == "mqtt" %} 
-        {{ trigger.payload_json.action != null and trigger.payload_json.action !="" }}
-      {% endif %}
+    value_template: |2-
+        {% if trigger.platform == "mqtt" %} 
+          {{ trigger.payload_json.action != null and trigger.payload_json.action !="" }}
+        {% elif trigger.platform == "state" %}
+          {{ True }}
+        {% endif %}
 
 ###### https://manuals.plus/earda-technologies/ers-10tzbvk-aa-smart-knob-manual
 ### Event
