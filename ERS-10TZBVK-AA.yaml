@@ -145,8 +145,8 @@ condition:
 action:
   - variables:
       platform: "{{ trigger.platform }}"
-      payload:  "{% if trigger.to_state|default(false,true) %}{{ trigger.to_state.state }}{% else %}{{ trigger.payload_json.action }}{% endif %}"
-      step_size: "{{ trigger.payload_json.action_step_size }}"
+      payload:   "{% if trigger.to_state|default(false,true) %} {{ trigger.to_state.state }} {% else %} {{ trigger.payload_json.action }} {% endif %}"
+      step_size: "{% if trigger.to_state|default(false,true) %} {{False}} {% else %} {{ trigger.payload_json.action_step_size }} {% endif %}"
   - choose:
       - conditions:
           - "{{ platform == 'mqtt' and payload == 'single' }}"
