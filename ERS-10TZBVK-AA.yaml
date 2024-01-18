@@ -12,6 +12,7 @@ blueprint:
       name: Base Topic
     state_entity:
       name: State
+      description: Choose the operation mode entity of the smart knob.  Used for detecting change of mode.
       selector:
         entity:
           domain: select
