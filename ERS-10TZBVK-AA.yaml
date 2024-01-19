@@ -81,13 +81,13 @@ blueprint:
         action: { }
     command_color_temperature_step_down:
       name: Command | Color Temperature Up
-      description: Action to run on left rotate + press in command mode
+      description: Action to run on right rotate + press in command mode
       default: []
       selector:
         action: {}
     command_color_temperature_step_up:
       name: Command | Color Temperature Down
-      description: Action to run on right rotate + press in command mode
+      description: Action to run on left rotate + press in command mode
       default: []
       selector:
         action: {}
