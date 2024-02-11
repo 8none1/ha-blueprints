@@ -41,6 +41,8 @@ Or you can use this:
 
 ## esw-0zaa-eu.yaml
 
+![TS0044](https://github.com/8none1/ha-blueprints/assets/6552931/340180e4-3ad6-4214-bcf0-9472970684f4)
+
 Supports: TS0044 Scene Switch
 
 Actions for single, double and hold press on each of the four buttons.
@@ -52,6 +54,8 @@ You can add this Blueprint to Home Assistant from this url:
 [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fraw.githubusercontent.com%2F8none1%2Fha-blueprints%2Fmaster%2Fesw-0zaa-eu.yaml)
 
 ## sh-sc07.yaml
+
+![image](https://github.com/8none1/ha-blueprints/assets/6552931/8c321b59-c89e-44c6-ae4f-2735b70b7a49)
 
 Supports: SH-CH07 Single button switch
 
