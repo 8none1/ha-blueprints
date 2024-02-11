@@ -10,7 +10,7 @@ blueprint:
       default: ''
     base_topic:
       name: (Zigbee2MQTT) Base mqtt topic
-      description: The base topic as configured in z2m (keep unless Z2M non-default configuation)
+      description: The base topic as configured in z2m (keep unless Z2M non-default configuration)
       default: zigbee2mqtt
     #Button 1
     button_one_short_press:
