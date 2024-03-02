@@ -14,7 +14,8 @@ blueprint:
             - event
             integration: octopus_energy
           multiple: false
-  action:
+    notify_action:
+      action:
   source_url: https://github.com/8none1/ha-blueprints/blob/master/octopus_saving_session.yml
 mode: single
 variables:
