@@ -1,8 +1,8 @@
 blueprint:
-  name: Octopus Energy - Join Saving Session
+  name: Octopus Energy - Join Saving Session & Notify
   description: Automatically joins saving sessions when they become available
   domain: automation
-  author: BottlecapDave
+  author: 8none1
   input:
     saving_session_event_entity:
       name: Saving session events
