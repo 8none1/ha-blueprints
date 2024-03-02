@@ -15,6 +15,8 @@ blueprint:
             integration: octopus_energy
           multiple: false
     notify_action:
+      name: Notification action
+      description: Choose the service or other action to call when this automation is triggered
       selector:
         action: {}
   source_url: https://github.com/8none1/ha-blueprints/blob/master/octopus_saving_session.yml
